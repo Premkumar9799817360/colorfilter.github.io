@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Filter App</title>
+    <style>
+        body {
+            background-color: #FFA500;
+        }
+
+        h2 {
+            font-family: fantasy;
+            text-align: center;
+            font-size: 50px;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        h3 {
+            border-radius: 14px;
+            font-size: 40px;
+            width: 475px;
+            text-align: center;
+            background-color: black;
+            color: white;
+            margin: 55px 410px;
+            padding: 65px 89px;
+            box-shadow: inset 0px 0px 20px 14px;
+        }
+
+        #btn {
+            color: white;
+            border-radius: 11px;
+            font-size: 36px;
+            font-family: cursive;
+            padding: 7px 21px;
+            background-color: black;
+        }
+
+        #teg {
+            direction: unset;
+            color: black;
+            font-size: 50px;
+            font-family: cursive;
+            font-weight: bold;
+            padding: 40px 6px;
+            margin: 9px 3px;
+        }
+
+        @media only screen and (max-width: 480px) {
+            h2 {
+                font-family: fantasy;
+                text-align: center;
+                font-size: 38px;
+            }
+
+            .container {
+                text-align: center;
+            }
+
+            h3 {
+                font-size: 26px;
+                width: 135px;
+                margin: 63px 19px;
+                padding: 59px 85px;
+            }
+            #btn {
+                font-size: 30px;
+                padding: 7px 21px;
+            }
+            #teg {
+                font-size: 28px;
+                padding: 40px 6px;
+                margin: 9px 3px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Color Filter App</h2>
+    <div class="container">
+        <h3>
+            Background color : <span class="color">#FFA500</span>
+        </h3>
+        <button id="btn">Click me</button>
+        <marquee id="teg">Created By Prem Kumar</marquee>
+    </div>
+    <script>
+        console.log("hi guys this is color filter simple project");
+        const colors = ["red", "yellow", "green", "lightcoral", "gray", "forestgreen", "aqua", "deeppink", "darkred"
+            , "#808000", "rgb(106, 90, 205)", "#800080", "rgb(16, 230, 25)", "#00ffff", "#FFFF00", "rgb(6, 232, 56)", "chartreuse", "brown", "#20d914", "rgb(255, 255, 255)", "rgb(238, 130, 238)"]
+        let btn = document.getElementById('btn')
+        let color = document.querySelector('.color')
+
+        btn.addEventListener('click', function () {
+            let randomnumber = generaterandom();
+            console.log(randomnumber)
+            document.body.style.backgroundColor = colors[randomnumber];
+            color.textContent = colors[randomnumber]
+
+        })
+        function generaterandom() {
+            return Math.floor(Math.random() * colors.length);
+        }
+
+
+    </script>
+</body>
+
+</html>
